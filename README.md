@@ -1,14 +1,17 @@
 ## Phonegap build wrapper
 
-Phonegap build wrapper around the github/michaelgundlach/hairties/reviewer flashcard project.
+This is a Phonegap build wrapper around the github/michaelgundlach/hairties/reviewer flashcard project.  /reviewer runs fine on the web (see hairties.sorryrobot.com/reviewer/); this repo makes it run as an Android app.
 
-## To build the phonegap app
-The hairties API server (found in the hairties/server folder) must be up and running at http://hairties.sorryrobot.com/api/.
+## To build the Android app
 
-Steps:
- 1.  Run ./import_hairties.sh to download the latest master 'hairties' from github. 
- 2.  git commit -am "Imported latest hairties" && git push origin master # to github hairties_phonegap project, not hairties project
- 3.  Visit build.phonegap.com/apps (sign in with Adobe ID g***.b***+omg@gmail.com), click Update Code or something to fetch the latest hairties_phonegap code from github and build the Android version
- 4.  Download the Android .apk that was built, and either
-    1. expose it on the web and visit in Android Chrome (perhaps put it in github hairties_phonegap project root as a new commit) or
-    2. Put it on the Google Play Store somehow.
+Run ./build_latest_hairties_app.sh to build.
+
+Note that the app won't work unless the hairties API server (found in the hairties/server folder) is up and running at http://hairties.sorryrobot.com/api/.
+
+## Files
+
+build_latest_hairties_app.sh automates getting the build done.
+
+config.xml is the metadata.
+icon.png is the icon.
+www/ contains the app (and gets overwritten with the latest reviewer code by the build script)
